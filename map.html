@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Map</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body, #wrapper, #map-wrapper {
+            height: 100%;
+            max-height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 2rem;
+        }
+        #wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        #map-wrapper {
+            border: 1px solid black;
+            overflow-y: auto;
+            flex-grow: 1;
+            position: relative;
+        }
+        #selector-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="tools">
+            <button id="zoomIn-btn">
+                zoom in
+            </button>
+            <button id="zoomOut-btn">
+                zoom out
+            </button>
+            <button id="select-btn">
+                select
+            </button>
+            <span>
+                Selected population: <span id="select-pop">0</span>
+            </span>
+            <span>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                Note: only top-left-to-bottom-right selections work at the moment
+            </span>
+        </div>
+        <div id="map-wrapper">
+            <canvas id="map"></canvas>
+            <canvas id="selector-canvas"></canvas>
+        </div>
+    </div>
+    <script src="/map.js" type="module"></script>
+</body>
+</html>
